@@ -1,8 +1,7 @@
-"""
-URL configuration for shop_apI project.
+"""HWdjangoProject URL Configuration
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
+The urlpatterns list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/4.1/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -18,12 +17,17 @@ from django.contrib import admin
 from django.urls import path
 from product import views
 
+
 urlpatterns = [
-    path('api/v1/category/', views.category_list_api_view),
     path('admin/', admin.site.urls),
-    path('api/v1/category/<int:id>/', views.category_detail_api_view),
     path('api/v1/products/', views.product_list_api_view),
     path('api/v1/products/<int:id>/', views.product_detail_api_view),
+
     path('api/v1/reviews/', views.review_list_api_view),
     path('api/v1/reviews/<int:id>/', views.review_detail_api_view),
+
+    path('api/v1/categories/', views.category_list_api_view),
+    path('api/v1/categories/<int:id>/', views.category_detail_api_view),
+
+    path('api/v1/products/reviews/', views.products_reviews_rating_view)
 ]
